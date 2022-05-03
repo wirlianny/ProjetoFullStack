@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Fullstack.Data;
-using Fullstack.Models;
+using Fullstack.Persistence;
+using Fullstack.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -15,9 +15,9 @@ namespace Fullstack.Controllers
     {
 
                
-        private readonly DataContext _context;
+        private readonly ProEventosContext _context;
 
-        public EventosController(DataContext context)
+        public EventosController(ProEventosContext context)
         {
            _context = context;
             
@@ -32,7 +32,7 @@ namespace Fullstack.Controllers
          [HttpGet("{id}")]
         public Evento GetById(int id)
         {
-           return _context.Eventos. FirstOrDefault(evento => evento.EventoId == id);
+           return _context.Eventos. FirstOrDefault(evento => evento.Id == id);
         }
 
          [HttpPost]
