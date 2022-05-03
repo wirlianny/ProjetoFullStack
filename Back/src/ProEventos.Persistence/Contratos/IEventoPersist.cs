@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Fullstack.Domain;
 
 namespace ProEventos.Persistence.Contratos
 {
@@ -10,11 +11,11 @@ namespace ProEventos.Persistence.Contratos
         
         //EVENTOS
 
-        Task<Evento[]> GetAllEventosByTemaAsync(string tema, bool includePalestrantes);
+        Task<Evento[]> GetAllEventosByTemaAsync(string tema, bool includePalestrantes = false);
 
-        Task<Evento[]> GetAllEventosAsync(bool includePalestrantes);
+        Task<Evento[]> GetAllEventosAsync(bool includePalestrantes = false);
 
-        Task<Evento> GetAllEventoByIdAsync(int EventoId, bool includePalestrantes);
+        Task<Evento> GetAllEventoByIdAsync(int eventoId, bool includePalestrantes = false);
         
 
 

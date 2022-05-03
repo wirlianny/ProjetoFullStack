@@ -6,7 +6,7 @@ using Fullstack.Domain;
 using Microsoft.EntityFrameworkCore;
 using ProEventos.Domain;
 
-namespace Fullstack.Persistence
+namespace Fullstack.Persistence.Contextos
 {
     public class ProEventosContext : DbContext
     {

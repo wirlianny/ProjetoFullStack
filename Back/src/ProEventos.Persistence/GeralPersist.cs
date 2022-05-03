@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using FullStack.Domain;
 using ProEventos.Persistence.Contratos;
+using Fullstack.Persistence.Contextos;
 
 namespace ProEventos.Persistence
 {
@@ -18,7 +14,7 @@ namespace ProEventos.Persistence
 
         public void Add<T>(T entity) where T: class 
         {
-            _context.Add(entity);
+            _context.AddAsync(entity);
         }
 
         public void Update<T>(T entity) where T : class 
@@ -27,9 +23,19 @@ namespace ProEventos.Persistence
         }
         
 
-        public void DeleteRange<T>(T entityArray) where T: class 
+        public void DeleteRange<T>(T[] entityArray) where T: class 
         {
-            _context.RemoveRange(entityArray)
+            _context.RemoveRange(entityArray);
         }    
+
+         public void Delete<T>(T entity) where T: class 
+        {
+            _context.Remove(entity);
+        }   
+
+        public async Task<bool> SaveChangesAsync() {
+            return (await _context.SaveChangesAsync()) > 0;
+        } 
     }
+    
 }

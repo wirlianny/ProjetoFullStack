@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using FullStack.Domain;
+using Fullstack.Domain;
 using ProEventos.Persistence.Contratos;
+using Fullstack.Persistence.Contextos;
 
 namespace ProEventos.Persistence
 {

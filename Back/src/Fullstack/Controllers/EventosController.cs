@@ -6,6 +6,7 @@ using Fullstack.Persistence;
 using Fullstack.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Fullstack.Persistence.Contextos;
 
 namespace Fullstack.Controllers
 {
